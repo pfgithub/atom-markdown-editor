@@ -14,10 +14,10 @@ Recommended Settings:
 ```cson
 "*":
 	editor:
-		showIndentGuide: true // OPTIONAL. The indent guide is customizeable in the style config.
-		showInvisibles: true // OPTIONAL. These can be hidden in the style config
-		softTabs: false // OPTIONAL. Hard tabs work better with many markdown elements, like lists.
-		tabLength: 4 // OPTIONAL. The indent guide is set up for 4 width hard tabs by default
+		showIndentGuide: true # OPTIONAL. The indent guide is customizeable in the style config.
+		showInvisibles: true # OPTIONAL. These can be hidden in the style config
+		softTabs: false # OPTIONAL. Hard tabs work better with many markdown elements, like lists.
+		tabLength: 4 # OPTIONAL. The indent guide is set up for 4 width hard tabs by default
 	whitespace:
 		removeTrailingWhitespace: false // OPTIONAL. So two spaces at the end of lines are not removed
 ```
