@@ -19,7 +19,7 @@ Recommended Settings:
 		softTabs: false # OPTIONAL. Hard tabs work better with many markdown elements, like lists.
 		tabLength: 4 # OPTIONAL. The indent guide is set up for 4 width hard tabs by default
 	whitespace:
-		removeTrailingWhitespace: false // OPTIONAL. So two spaces at the end of lines are not removed
+		removeTrailingWhitespace: false # OPTIONAL. So two spaces at the end of lines are not removed
 ```
 
 Configure the stylesheet with the variables and mixins at the top.
