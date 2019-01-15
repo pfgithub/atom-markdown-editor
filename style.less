@@ -64,7 +64,52 @@
 	.punctuation{opacity: 0.5;}
 	@punctuation-style-replace-semi-with-interpunct: true; // Replace `;` with `·`
 
+// -------------------
+// Mixin Documentation
+// -------------------
+
+.docs{
+	// Text Styles
+	.bold; // Sets font-weight to bold
+	.italic; // Sets font-style to italic
+	.underline; // Sets text-decoration to underline
+	.strikethrough; // Does a gigantic mess making pseudoelements sized to strikethrough some text
+	
+	.monospace; // Sets the font to the chosen code font or the default monospace
+	.text-font; // Sets the font to the chosen text font
+	
+	.font-size-scale(100%); // Sets the font size to n% of the default font size
+	
+	.inline-block; // Puts a box arond the text, like inline code blocks
+	.block // Sets the line background to the chosen background color, like normal code blocks
+	
+}
+
+// ------------------------
 // Configuration ends here.
+// ------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------
+// Code starts here.
+// -----------------
 
 
 @line-height-px: ~"calc(var(--editor-font-size) * var(--editor-line-height))";
@@ -76,6 +121,9 @@
 }
 .monospace(){
 	font-family: var(--editor-font-family);
+}
+.text-font(){
+	font-family: @font-text;
 }
 .font-size-scale(@percentage) {
 	@number-percentage: (unit(@percentage) / 100);
@@ -139,7 +187,7 @@
 span when(@markdown){
 	.syntax--markup, .syntax--md{
 		& when(@markdown-font-always-monospace = false){
-			font-family:@font-text;
+			.text-font
 		}
 		color: @markdown-color-text;
 		&.syntax--raw when(@markdown-inline-code){
