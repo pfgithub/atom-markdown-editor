@@ -236,7 +236,8 @@ span when(@markdown){
 		&.syntax--punctuation{
 			.monospace;
 		}
-		& when(@markdown-headings){
+		&.syntax--heading when(@markdown-headings){
+			color: @markdown-color-text !important;
 			&.syntax--heading-1{
 				.markdown-heading-1
 			}
