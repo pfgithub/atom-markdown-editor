@@ -24,7 +24,7 @@ Recommended Settings:
 
 Configure the stylesheet with the variables and mixins at the top.
 
-[![Demo](https://i.imgur.com/VrI99Mk.png)](https://github.com/pfgithub/atom-markdown-editor/blob/master/DEMO.md)  
+[![Demo](https://i.imgur.com/VrI99Mk.png)](https://pfgithub.github.io/atom-markdown-editor/DEMO)  
 (click to view demo rendered by github)
 
 ## Known Issues
