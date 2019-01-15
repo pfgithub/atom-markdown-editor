@@ -1,2 +1,25 @@
-# atom-markdown-editor
-A stylesheet for markdown editing in atom
+# atom markdown editor
+
+Makes the markdown editor look more like the final result.
+
+## Installation
+
+- Requires the [`language-markdown`](https://github.com/burodepeper/language-markdown) package for markdown parsing.
+- Any dark syntax theme should work, this was built with the [`city-lights-syntax`](https://github.com/Yummygum/city-lights-syntax-atom)  theme in mind.
+- [`move-cursor-improved`](https://github.com/susisu/move-cursor-improved) is recommended for making the cursor up/down work properly with non-monospace fonts.
+
+Recommended Settings:
+```cson
+"*":
+	editor:
+		showIndentGuide: true // OPTIONAL. The indent guide is customizeable in the style config.
+		showInvisibles: true // OPTIONAL. These can be hidden in the style config
+		softTabs: false // OPTIONAL. Hard tabs work better with many markdown elements, like lists.
+		tabLength: 4 // OPTIONAL. The indent guide is set up for 4 width hard tabs by default
+	whitespace:
+		removeTrailingWhitespace: false // OPTIONAL. So two spaces at the end of lines are not removed
+```
+
+Markdown works best with hard tabs for many features such as lists.
+
+[![Demo](https://i.imgur.com/VrI99Mk.png)](https://github.com/pfgithub/atom-markdown-editor/blob/master/DEMO.md)
