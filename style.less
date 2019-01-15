@@ -421,11 +421,11 @@ span when(@fonts){
 }
 
 // Character Replacements
-.syntax--punctuation.syntax--terminator when(@punctuation-style-replace-semi-with-interpunct){
+.syntax--punctuation.syntax--terminator when(@punctuation-style)  and(@punctuation-style-replace-semi-with-interpunct){
 	visibility: hidden;
 	// font-size:0;
 }
-.syntax--punctuation.syntax--terminator:after when(@punctuation-style-replace-semi-with-interpunct){
+.syntax--punctuation.syntax--terminator:after when(@punctuation-style) and(@punctuation-style-replace-semi-with-interpunct){
 	content:"·";
 	visibility: visible;
 	position:absolute;
