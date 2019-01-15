@@ -4,6 +4,8 @@ Makes the markdown editor look more like the final result.
 
 ## Installation
 
+Copy [`style.less`](https://raw.githubusercontent.com/pfgithub/atom-markdown-editor/master/style.less) to your atom user stylesheet. (Edit > Stylesheet...)
+
 - Requires the [`language-markdown`](https://github.com/burodepeper/language-markdown) package for markdown parsing.
 - Any dark syntax theme should work, this was built with the [`city-lights-syntax`](https://github.com/Yummygum/city-lights-syntax-atom)  theme in mind.
 - [`move-cursor-improved`](https://github.com/susisu/move-cursor-improved) is recommended for making the cursor up/down work properly with non-monospace fonts.
