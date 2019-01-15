@@ -22,6 +22,6 @@ Recommended Settings:
 		removeTrailingWhitespace: false // OPTIONAL. So two spaces at the end of lines are not removed
 ```
 
-Markdown works best with hard tabs for many features such as lists.
+Configure the stylesheet with the variables and mixins at the top.
 
 [![Demo](https://i.imgur.com/VrI99Mk.png)](https://github.com/pfgithub/atom-markdown-editor/blob/master/DEMO.md)
