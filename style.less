@@ -1,10 +1,19 @@
-@indent-guide: true; // Enable the custom indent guide
+// -------------
+// Configuration
+// -------------
+
+// Settings for the custom indent guide.
+@indent-guide: false; // Enable the custom indent guide, like the one shown in the demo screenshot.
 	@indent-guide-color-hard-tab: rgba(255,255,255,0.2);
 	@indent-guide-color-soft-tab: rgba(255,255,255,0.1);
 	@indent-guide-hard-tab-only: true; // Only enable the indent guide for hard tabs.
 	@indent-guide-soft-tab-position: 50%; // The character the indent guide is shown at on soft tabs. Find a value that works.
 	@indent-guide-hard-tab-position: 250%; // The character the indent guide is shown at on hard tabs. Find a value that works.
 
+// Settings for when invisible characters should be shown.
+@invisible-characters: false; // When disabled, only shows important visible characters such as spaces after markdown lines. When enabled, all invisible characters are shown.  Set to false if you usually hide invisible characters in settings, true if you usually show them. Both options require invisible characters enabled in settings.
+
+// Settings for editing markdown files
 @markdown: true; // Enable markdown editor additions.
 	@markdown-color: true; // Default colors are for the City Lights syntax theme. Disabling this does nothing.
 		@markdown-color-text: #B7C5D3; 
@@ -49,17 +58,18 @@
 		.markdown-text-style-italic {.italic; opacity: 0.8;}
 		.markdown-text-style-strikethrough {.strikethrough;}
 	@markdown-indent-guide: true; // Enables the indent guide on markdown. When disabled, invisible characters are shown instead (if enabled in settings).
-
-@invisible-characters: false; // Always shows invisible characters. When disabled, only shows important visible characters such as spaces after markdown lines. 
-
-@fonts: true; // Overrides default fonts
+	
+// Settings for replacing the default fonts
+@fonts: false; // Overrides default fonts
 	@font-code: Consolas, 'SF Mono', Monaco, 'Courier New', Courier, Monospace;
 		@font-code-ligatures: 'DejaVu Sans Code', @font-code; // Font for operators. Use if you want ligatures on operators but don't like the font. Otherwise, can be set to just @font-code
 	@font-text: sans-serif; // Font for markdown.
 
-@animate-cursor: true; // Animate the cursor moving, like MS Word.
+// Settings for animating the cursor
+@animate-cursor: false; // Animate the cursor moving, like MS Word.
 
-@punctuation-style: true; // Custom styling for punctuation and brackets.
+// Settings for punctuation
+@punctuation-style: false; // Custom styling for punctuation and brackets.
 	.brackets{opacity: 0.3;}
 	.punctuation{opacity: 0.5;}
 	@punctuation-style-replace-semi-with-interpunct: true; // Replace `;` with `·`
@@ -84,6 +94,7 @@
 	.block // Sets the line background to the chosen background color, like normal code blocks
 	
 }
+
 
 // ------------------------
 // Configuration ends here.
@@ -365,11 +376,17 @@ span when(@invisible-characters = false){
 	.invisible-character{
 		visibility:hidden
 	}
+	.invisible-character.indent-guide{
+		visibility:visible;
+	}
 	.invisible-character.trailing-whitespace{
 		visibility:hidden;
 	}
 }
 span when (@indent-guide) {
+	.invisible-character.indent-guide{
+		visibility:hidden;
+	}
 	.indent-guide{
 		box-shadow:none !important;
 		visibility:hidden;
