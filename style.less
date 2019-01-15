@@ -1,3 +1,5 @@
+@import "syntax-variables";
+
 // -------------
 // Configuration
 // -------------
@@ -16,7 +18,7 @@
 // Settings for editing markdown files
 @markdown: true; // Enable markdown editor additions.
 	@markdown-color: true; // Default colors are for the City Lights syntax theme. Disabling this does nothing.
-		@markdown-color-text: #B7C5D3;
+		@markdown-color-text: @syntax-text-color;
 		@markdown-color-links: #68A1F0;
 		@markdown-color-line: rgba(0,0,0,0.6);
 		@markdown-color-solid-line: #111; // The left line on a quote is a "solid" line
@@ -74,9 +76,18 @@
 	.punctuation{opacity: 0.5;}
 	@punctuation-style-replace-semi-with-interpunct: true; // Replace `;` with `·`
 
+// Settings for comments
 @comment-style: false; // Custom styling for comments
 	.comment-style-inline-comment{.inline-block; .text-font;}
 	.comment-style-multiline-comment{.block; .text-font;}
+
+// Settings for escapes in strings
+@string-style: false;
+	@string-escape-style: true;
+		@string-escape-backslash-color: rgba(255,255,255,0.2);
+		@string-escape-character-color: #33CED8;
+	@string-style-custom: false;
+		.string-style{.text-font;}
 
 // -------------------
 // Mixin Documentation
@@ -470,6 +481,21 @@ span when(@comment-style){
 		.comment-style-multiline-comment;
 	}
 	.syntax--comment.syntax--punctuation{
+		.monospace;
+	}
+}
+
+.syntax--string when(@string-style){
+	& > .syntax--escape when(@string-escape-style){
+		background: -webkit-linear-gradient(right, @string-escape-character-color 50%, @string-escape-backslash-color 50%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		content: "test\'test";
+	}
+	&:not(.syntax--punctuation) when(@string-style-custom){
+		.string-style;
+	}
+	& > span when(@string-style-custom){
 		.monospace;
 	}
 }
