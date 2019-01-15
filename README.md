@@ -1,4 +1,4 @@
-# atom markdown editor
+# [atom markdown editor](https://pfgithub.github.io/atom-markdown-editor/)
 
 Makes the markdown editor look more like the final result.
 
