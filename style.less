@@ -16,7 +16,7 @@
 // Settings for editing markdown files
 @markdown: true; // Enable markdown editor additions.
 	@markdown-color: true; // Default colors are for the City Lights syntax theme. Disabling this does nothing.
-		@markdown-color-text: #B7C5D3; 
+		@markdown-color-text: #B7C5D3;
 		@markdown-color-links: #68A1F0;
 		@markdown-color-line: rgba(0,0,0,0.6);
 		@markdown-color-solid-line: #111; // The left line on a quote is a "solid" line
@@ -58,7 +58,7 @@
 		.markdown-text-style-italic {.italic; opacity: 0.8;}
 		.markdown-text-style-strikethrough {.strikethrough;}
 	@markdown-indent-guide: true; // Enables the indent guide on markdown. When disabled, invisible characters are shown instead (if enabled in settings).
-	
+
 // Settings for replacing the default fonts
 @fonts: false; // Overrides default fonts
 	@font-code: Consolas, 'SF Mono', Monaco, 'Courier New', Courier, Monospace;
@@ -74,6 +74,10 @@
 	.punctuation{opacity: 0.5;}
 	@punctuation-style-replace-semi-with-interpunct: true; // Replace `;` with `·`
 
+@comment-style: false; // Custom styling for comments
+	.comment-style-inline-comment{.inline-block; .text-font;}
+	.comment-style-multiline-comment{.block; .text-font;}
+
 // -------------------
 // Mixin Documentation
 // -------------------
@@ -84,15 +88,15 @@
 	.italic; // Sets font-style to italic
 	.underline; // Sets text-decoration to underline
 	.strikethrough; // Does a gigantic mess making pseudoelements sized to strikethrough some text
-	
+
 	.monospace; // Sets the font to the chosen code font or the default monospace
 	.text-font; // Sets the font to the chosen text font
-	
+
 	.font-size-scale(100%); // Sets the font size to n% of the default font size
-	
+
 	.inline-block; // Puts a box arond the text, like inline code blocks
 	.block // Sets the line background to the chosen background color, like normal code blocks
-	
+
 }
 
 
@@ -156,7 +160,7 @@
 		}
 	}
 	position:relative;
-	
+
 	&::before{
 		content: "";
 		width: 100%;
@@ -453,4 +457,19 @@ span when(@fonts){
 // Cursor
 .cursor when(@animate-cursor) {
 	transition: 0.1s transform, 0.1s width, 0.1s height;
+}
+
+// Comment
+/*Multiline
+Comment*/
+span when(@comment-style){
+	.syntax--comment.syntax--line{
+		.comment-style-inline-comment;
+	}
+	.syntax--comment.syntax--block{
+		.comment-style-multiline-comment;
+	}
+	.syntax--comment.syntax--punctuation{
+		.monospace;
+	}
 }
