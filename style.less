@@ -211,6 +211,8 @@
 :root{
 }
 
+@markdown-heading-numbers: 1 2 3 4 5 6;
+
 // Markdown
 span when(@markdown){
 	.syntax--markup, .syntax--md{
@@ -238,24 +240,29 @@ span when(@markdown){
 		&.syntax--punctuation{
 			.monospace;
 		}
-		&.syntax--heading when(@markdown-headings){
-			color: @markdown-color-text !important;
+		& when(@markdown-headings){
 			&.syntax--heading-1{
+				color: @markdown-color-text !important;
 				.markdown-heading-1
 			}
 			&.syntax--heading-2{
+				color: @markdown-color-text !important;
 				.markdown-heading-2
 			}
 			&.syntax--heading-3{
+				color: @markdown-color-text !important;
 				.markdown-heading-3
 			}
 			&.syntax--heading-4{
+				color: @markdown-color-text !important;
 				.markdown-heading-4
 			}
 			&.syntax--heading-5{
+				color: @markdown-color-text !important;
 				.markdown-heading-5
 			}
 			&.syntax--heading-6{
+				color: @markdown-color-text !important;
 				.markdown-heading-6
 			}
 		}
@@ -433,7 +440,7 @@ atom-text-editor when(@fonts){
 	--editor-font-family: @font-code;
 }
 span when(@fonts){
-	.syntax--storage.syntax--type.syntax--function.syntax--arrow, .syntax--operator{
+	.syntax--operator, .syntax--punctuation{
 		font-family: @font-code-ligatures;
 		font-size: ~"calc(var(--editor-font-size) * 50%)";
 	}
@@ -464,7 +471,7 @@ span when(@fonts){
 	content:"·";
 	visibility: visible;
 	position:absolute;
-	transform:translate(-100%,10%);
+	transform:translate(-100%, 10%);
 	font-size:var(--editor-font-size);
 }
 
